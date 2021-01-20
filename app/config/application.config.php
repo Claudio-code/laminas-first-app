@@ -59,5 +59,7 @@ return [
 
     // Initial configuration with which to seed the ServiceManager.
     // Should be compatible with Laminas\ServiceManager\Config.
-    // 'service_manager' => [],
+    'service_manager' => [
+        \Laminas\Db\Adapter::class => \Laminas\Db\Adapter\AdapterServiceFactory::class,
+    ],
 ];

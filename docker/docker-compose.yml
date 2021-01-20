@@ -1,6 +1,14 @@
 version: '3'
 
 services:
+  db:
+    image: mariadb
+    restart: always
+    environment:
+      MYSQL_DATABASE: ${DATABASE_NAME}
+      MYSQL_USER: ${DATABASE_USER}
+      MYSQL_PASSWORD: ${DATABASE_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${DATABASE_ROOT_PASSWORD}
   laminas:
     container_name: learning-laminas-mvc
     build: 
@@ -9,10 +17,8 @@ services:
     - "8080:80"
     volumes:
     - ../app:/var/www
-  db:
-    image: mariadb
-    restart: always
     environment:
+      DATABASE_URL: db:3306
       MYSQL_DATABASE: ${DATABASE_NAME}
       MYSQL_USER: ${DATABASE_USER}
       MYSQL_PASSWORD: ${DATABASE_PASSWORD}
