@@ -1,14 +1,11 @@
 rm-containers:
-	sudo docker-compose rm
+	docker-compose rm
 
 build:
-	sudo docker-compose up --build -d
+	../Cli/build-app.sh
 
 start:
-	sudo docker-compose up
+	docker-compose up
 
 stop:
-	sudo docker-compose stop
-
-composer:
-	sudo docker-compose run php composer 
+	docker-compose stop
