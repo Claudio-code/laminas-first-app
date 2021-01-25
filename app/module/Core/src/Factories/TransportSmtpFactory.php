@@ -9,14 +9,14 @@ use Laminas\ServiceManager\Factory\FactoryInterface;
 
 class TransportSmtpFactory implements FactoryInterface
 {
-  public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
-  {
-    $config = $container->get('config');
-    
-    $transport = new SmtpTransport();
-    $options = new SmtpOptions($config['mail']);
-    $transport->setOptions($options);
+    public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
+    {
+        $config = $container->get('config');
 
-    return $transport;
-  }
+        $transport = new SmtpTransport();
+        $options = new SmtpOptions($config['mail']);
+        $transport->setOptions($options);
+
+        return $transport;
+    }
 }
