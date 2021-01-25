@@ -14,10 +14,22 @@
 
 return [
     'db' => [
-        'driver' => 'Pdo_mysql',
+        'driver'   => 'Pdo_mysql',
         'database' => getenv('MYSQL_DATABASE'),
-        'host' => getenv('DATABASE_URL'),
+        'host'     => getenv('DATABASE_URL'),
         'username' => getenv('MYSQL_USER'),
         'password' => getenv('MYSQL_ROOT_PASSWORD')
+    ],
+    'mail' => [
+        'name'              => 'smtp.mailtrap.io',
+        'host'              => 'smtp.mailtrap.io',
+        'port'              => 2525,
+        'connection_class'  => 'login',
+        'connection_config' => [
+            'from'     => 'soneca859@gmail.com',
+            'username' => 'e0c167dac82442',
+            'password' => 'fb0be4d1b0b336',
+            'auth'     => 'CRAM-MD5',
+        ],
     ]
 ];
