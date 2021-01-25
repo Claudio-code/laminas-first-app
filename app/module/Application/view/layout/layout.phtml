@@ -219,11 +219,11 @@
 
 <!-- Scripts -->
 <?= $this->inlineScript()
+    ->prependFile($this->basePath('js/fastclick/lib/fastclick.js')) 
+    ->prependFile($this->basePath('dist/js/adminlte.min.js')) 
+    ->prependFile($this->basePath('js/jquery-slimscroll/jquery.slimscroll.min.js')) 
     ->prependFile($this->basePath('js/bootstrap.min.js'))
     ->prependFile($this->basePath('js/jquery.min.js')) 
-    ->prependFile($this->basePath('js/jquery-slimscroll/jquery.slimscroll.min.js')) 
-    ->prependFile($this->basePath('dist/js/adminlte.min.js')) 
-    ->prependFile($this->basePath('js/fastclick/lib/fastclick.js')) 
 ?>
 </body>
 </html>
